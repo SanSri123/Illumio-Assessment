@@ -9,8 +9,12 @@ e.g. `python3 parse_flow_log.py mock_lookup_table.txt mock_flow_log_data.txt`
 
 Must provide both files as arguments for code to run.
 
+Can generate mock test data using generate_mock_data.py
+
+To run mock data generation: `python3 generate_mock_data.py`
+
 Assumptions Made:
-- Program only support default log format (only version supported is 2)
+- Program only supports default log format (only version supported is 2)
 - Lookup table mappings input file is comma separated
 - Assumption is flow log data has all fields from Version 2
   - Will work even if field has default '-' character, but all fields must be present
