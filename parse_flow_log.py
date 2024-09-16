@@ -102,11 +102,5 @@ else:
     pfl = ParseFlowLog(sys.argv[1], sys.argv[2])
 
 
-
-
-
-
-
-
                 
                 
