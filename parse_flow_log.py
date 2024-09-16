@@ -64,8 +64,11 @@ class ParseFlowLog:
         with open(self.flow_log_file, "r") as flow_log_data:
             for line in flow_log_data:
                 data = line.split(' ')
-                dstport = data[6]
-                protocol = self.ip_protocol_table[data[7]].lower()
+                dstport = ""
+                protocol = ""
+                if data[6] != "-" and data[7] != "-":
+                    dstport = data[6]
+                    protocol = self.ip_protocol_table[data[7]].lower()
                 tag = "untagged"
 
                 if (dstport, protocol) not in self.port_protocol_count:
@@ -100,6 +103,12 @@ if not sys.argv[1] and not sys.argv[2]:
     print("Invalid input")
 else:
     pfl = ParseFlowLog(sys.argv[1], sys.argv[2])
+
+
+
+
+
+
 
 
                 
